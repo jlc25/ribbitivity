@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class TimerViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Timer fragment :D"
+        value = "00:00:00"
     }
     val text: LiveData<String> = _text
 }
