@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.ribbitivity.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_list"
+        android:name="com.example.ribbitivity.ui.list.ListFragment"
+        android:label="@string/title_list"
+        tools:layout="@layout/fragment_list" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.ribbitivity.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_timer"
+        android:name="com.example.ribbitivity.ui.timer.TimerFragment"
+        android:label="@string/title_timer"
+        tools:layout="@layout/fragment_timer" />
 </navigation>
