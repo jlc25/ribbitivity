@@ -42,7 +42,7 @@ class TimerFragment : Fragment() {
             if ( (hour+min+sec) > 0 && hour >= 0 && min in 0..60 && sec in 0..60) {
                 binding.errorMsg.text = ""
                 val time = (((hour * 60) + min) * 60 + sec) * 1000
-                countDown(time.toLong())
+                countDown(time.toLong()+1000)
                 binding.hour.text = null
                 binding.minute.text = null
                 binding.second.text = null
