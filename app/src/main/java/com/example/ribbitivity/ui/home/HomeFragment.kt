@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.example.ribbitivity.MainActivity
 import com.example.ribbitivity.R
 import com.example.ribbitivity.databinding.FragmentHomeBinding
 
@@ -43,17 +44,22 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         var counter = 0 // Counter to switch between happy and sad frog
-        var totalClicks = 0 // Total number of times the frog has been clicked
+//        var totalClicks = 0 // Total number of times the frog has been clicked
 
         val happyFrog = view.findViewById<ImageButton>(R.id.happyfrog)
         Glide.with(this).load(R.drawable.forg).into(happyFrog) // For the gif animation
         val sadFrog = view.findViewById<ImageView>(R.id.sadfrog)
         val numClicksDisplay = view.findViewById<TextView>(R.id.frogClicker)
 
+        val main = activity as MainActivity
+        if (main.getClicks() > 0) {
+            numClicksDisplay.setText("You have clicked the FROG ${main.getClicks()} times")
+        }
+
         happyFrog.setOnClickListener(){
-            println("Count is $totalClicks")
+//            println("Count is $totalClicks")
             counter +=1
-            totalClicks +=1
+            main.incrementClick()
 
             if (counter == 10){
                 sadFrog.visibility = View.VISIBLE
@@ -61,13 +67,13 @@ class HomeFragment : Fragment() {
                 Glide.with(this).load(R.drawable.sedforg).into(sadFrog) // For the gif animation
             }
 
-            numClicksDisplay.setText("You have clicked the FROG $totalClicks times")
+            numClicksDisplay.setText("You have clicked the FROG ${main.getClicks()} times")
 
         }
 
         sadFrog.setOnClickListener(){
             counter +=1
-            totalClicks +=1
+            main.incrementClick()
 
             // Revert to happy frog
             if (counter == 15){
@@ -77,7 +83,7 @@ class HomeFragment : Fragment() {
 
             }
 
-            numClicksDisplay.setText("You have clicked the FROG $totalClicks times")
+            numClicksDisplay.setText("You have clicked the FROG ${main.getClicks()} times")
 
         }
 
