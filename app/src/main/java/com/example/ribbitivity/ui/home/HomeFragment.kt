@@ -77,7 +77,7 @@ class HomeFragment : Fragment() {
 
             }
 
-            numClicksDisplay.setText("You have clicked the FROG \n $totalClicks \n times")
+            numClicksDisplay.setText("You have clicked the FROG $totalClicks times")
 
         }
 
