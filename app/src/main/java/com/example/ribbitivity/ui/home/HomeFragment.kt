@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
         val happyFrog = view.findViewById<ImageButton>(R.id.happyfrog)
         Glide.with(this).load(R.drawable.forg).into(happyFrog) // For the gif animation
         val sadFrog = view.findViewById<ImageView>(R.id.sadfrog)
-        val numCicksDisplay = view.findViewById<TextView>(R.id.frogClicker)
+        val numClicksDisplay = view.findViewById<TextView>(R.id.frogClicker)
 
         happyFrog.setOnClickListener(){
             println("Count is $totalClicks")
@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
                 Glide.with(this).load(R.drawable.sedforg).into(sadFrog) // For the gif animation
             }
 
-            numCicksDisplay.setText("You have clicked the FROG $totalClicks times")
+            numClicksDisplay.setText("You have clicked the FROG $totalClicks times")
 
         }
 
@@ -77,7 +77,7 @@ class HomeFragment : Fragment() {
 
             }
 
-            numCicksDisplay.setText("You have clicked the FROG \n $totalClicks \n times")
+            numClicksDisplay.setText("You have clicked the FROG \n $totalClicks \n times")
 
         }
 
