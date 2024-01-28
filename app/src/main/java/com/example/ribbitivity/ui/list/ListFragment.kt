@@ -48,6 +48,11 @@ class ListFragment : Fragment() {
             // Show the EditText and Confirm button
             editTextTask.visibility = View.VISIBLE
             btnConfirmAdd.visibility = View.VISIBLE
+
+            // Hide Add task and clear tasks buttons
+            btnAddTask.visibility = View.INVISIBLE
+            btnClearAllTasks.visibility = View.INVISIBLE
+
         }
 
         btnConfirmAdd.setOnClickListener {
@@ -60,6 +65,10 @@ class ListFragment : Fragment() {
                 // Clear the EditText
                 editTextTask.text.clear()
             }
+
+            // Make add and clear all buttons re-appear
+            btnAddTask.visibility = View.VISIBLE
+            btnClearAllTasks.visibility = View.VISIBLE
         }
 
 //        btnRemoveTask.setOnClickListener {
