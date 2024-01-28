@@ -11,6 +11,7 @@ import com.example.ribbitivity.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private var totalClicks = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,5 +30,13 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    public fun incrementClick() {
+        totalClicks += 1
+    }
+
+    public fun getClicks(): Int {
+        return totalClicks
     }
 }
